@@ -18,7 +18,7 @@ function App() {
               <Route exact path='/' component={Home} />
               {/* <Route path='/about' component={About} /> */}
               <Route path='/login' component={LoginView} />
-              <Route path='/registration' component={RegistrationView} />
+              <Route path='/signup' component={RegistrationView} />
               {/* <Route path='/:post_id' component={Post} /> */}
             </Switch>
           </header>
