@@ -6,11 +6,15 @@ import Link from '@material-ui/core/Link';
 import { Toolbar, AppBar } from "@material-ui/core";
 import useStyles from "./styles";
 
+import TopBar from '../TopBar/index';
+import Tags from '../Tags/Tags';
+
 export default function NavBar() {
   const classes = useStyles();
   return (
     <div>
       <CssBaseline />
+      <TopBar title="Blog" />
       <AppBar
         position="static"
         color="default"
@@ -61,7 +65,8 @@ export default function NavBar() {
             Login
           </Button>
         </Toolbar>
-      </AppBar>{" "}
+      </AppBar>
+      <Tags />
     </div>
   );
 }

@@ -10,40 +10,11 @@ import useStyles from "./styles";
 import Copyright from '../../Copyright';
 
 
-const footers = [
-  {
-    title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-  },
-  {
-    title: "Features",
-    description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-      "Another one",
-    ],
-  },
-  {
-    title: "Resources",
-    description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
-    ],
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
-  },
-];
-
-export default function Footer() {
+export default function Footer(props) {
+  const { footers } = props;
   const classes = useStyles();
   return (
-    <Container maxWidth="md" component="footer" className={classes.footer}>
+    <Container maxWidth="lg" component="footer" className={classes.footer}>
       <Grid container spacing={4} justify="space-evenly">
         {footers.map((footer) => (
           <Grid item xs={6} sm={3} key={footer.title}>
