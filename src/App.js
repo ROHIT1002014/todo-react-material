@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './views/Home';
 import LoginView from './views/auth/LoginView';
 import RegistrationView from './views/auth/RegistrationView';
+import SignupView from './views/auth/SignupVIew';
 import { ThemeProvider } from '@material-ui/core';
 import theme from './theme/index';
 
@@ -18,7 +19,8 @@ function App() {
               <Route exact path='/' component={Home} />
               {/* <Route path='/about' component={About} /> */}
               <Route path='/login' component={LoginView} />
-              <Route path='/signup' component={RegistrationView} />
+              <Route path='/signup' component={SignupView} />
+              <Route path='/registration' component={RegistrationView} />
               {/* <Route path='/:post_id' component={Post} /> */}
             </Switch>
           </header>

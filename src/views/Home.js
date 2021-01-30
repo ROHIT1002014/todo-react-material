@@ -1,6 +1,6 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 
 import Footer from "../components/dashboard/Footer";
 import Grid from "@material-ui/core/Grid";
@@ -9,14 +9,14 @@ import Features from "../components/dashboard/body/features/Features";
 import Introduction from "../components/dashboard/body/introduction/Introduction";
 import Description from "../components/dashboard/body/description/Description";
 
-const useStyles = makeStyles((theme) => ({
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   mainGrid: {
+//     marginTop: theme.spacing(3),
+//   },
+// }));
 
 export default function ClippedDrawer() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
   const featuredPosts = [
     {

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Container from '@material-ui/core/Container';
-import AddressForm from '../../components/AuthDialog/Forms/userRegtrationForms/AddressForm'
+import SignUp from '../../components/AuthDialog/Forms/Signup'
 
-class RegistrationView extends Component {
+class SignupView extends Component {
   render() {
     return (
       <Container component="main" maxWidth="xs">
-        <AddressForm />
+        <SignUp />
       </Container>
     );
   }
 }
 
-export default RegistrationView;
+export default SignupView;
