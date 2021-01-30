@@ -1,43 +1,67 @@
 import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-
-import {
-  IconButton,
-  Toolbar,
-  AppBar,
-} from "@material-ui/core";
-
-// import SearchIcon from "@material-ui/icons/Search";
-// import { Link } from "react-router-dom";
-// import styles from "./styles";
-// import "./style.css";
+import Button from "@material-ui/core/Button";
+import Link from '@material-ui/core/Link';
+import { Toolbar, AppBar } from "@material-ui/core";
+import useStyles from "./styles";
 
 export default function NavBar() {
-  const [setOpen] = React.useState(false);
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
+  const classes = useStyles();
   return (
     <div>
       <CssBaseline />
-      <AppBar position="fixed">
-        <Toolbar>
-          <IconButton
+      <AppBar
+        position="static"
+        color="default"
+        elevation={0}
+        className={classes.appBar}
+      >
+        <Toolbar className={classes.toolbar}>
+          <Typography
+            variant="h6"
             color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
+            noWrap
+            className={classes.toolbarTitle}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap>
-            Mini variant drawer
+            Company name
           </Typography>
+          <nav>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              Features
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              Enterprise
+            </Link>
+            <Link
+              variant="button"
+              color="textPrimary"
+              href="#"
+              className={classes.link}
+            >
+              Support
+            </Link>
+          </nav>
+          <Button
+            href="/login"
+            color="primary"
+            variant="outlined"
+            className={classes.link}
+          >
+            Login
+          </Button>
         </Toolbar>
-      </AppBar>
+      </AppBar>{" "}
     </div>
   );
 }

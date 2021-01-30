@@ -1,77 +1,70 @@
 import React from "react";
-import { Hidden, withStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-import styles from "./styles";
+// import { withStyles } from "@material-ui/core";
+// import { Link } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
+import useStyles from "./styles";
+import Copyright from '../../Copyright';
 
-class Footer extends React.Component {
-  render() {
-    const { classes } = this.props;
 
-    return (
-      <div className={classes.root}>
-        <Hidden smDown>
-          <div className={classes.linksContainer}>
-            <Button
-              classes={{
-                root: classes.button,
-              }}
-            >
-              <Link to={`/`} className={classes.footerLink}>
-                Regional
-              </Link>
-            </Button>
-            <Button
-              classes={{
-                root: classes.button,
-              }}
-            >
-              <Link to={`/`} className={classes.footerLink}>
-                Nature
-              </Link>
-            </Button>
-            <Button
-              classes={{
-                root: classes.button,
-              }}
-            >
-              <Link to={`/`} className={classes.footerLink}>
-                Seasonal
-              </Link>
-            </Button>
-          </div>
-        </Hidden>
-        <div className={classes.socialContainer}>
-          <img
-            className={classes.socialIcon}
-            alt="Shopping Cart Icon"
-            src="/assets/icons/instagram/grey.svg"
-          />
-          <img
-            className={classes.socialIcon}
-            alt="Shopping Cart Icon"
-            src="/assets/icons/pinterest/grey.svg"
-          />
-          <img
-            className={classes.socialIcon}
-            alt="Shopping Cart Icon"
-            src="/assets/icons/twitter/grey.svg"
-          />
-          <img
-            className={classes.socialIcon}
-            alt="Shopping Cart Icon"
-            src="/assets/icons/facebook/grey.svg"
-          />
-        </div>
-      </div>
-    );
-  }
-}
-
-Footer.defaultProps = {
-  categories: {
-    rows: [],
+const footers = [
+  {
+    title: "Company",
+    description: ["Team", "History", "Contact us", "Locations"],
   },
-};
+  {
+    title: "Features",
+    description: [
+      "Cool stuff",
+      "Random feature",
+      "Team feature",
+      "Developer stuff",
+      "Another one",
+    ],
+  },
+  {
+    title: "Resources",
+    description: [
+      "Resource",
+      "Resource name",
+      "Another resource",
+      "Final resource",
+    ],
+  },
+  {
+    title: "Legal",
+    description: ["Privacy policy", "Terms of use"],
+  },
+];
 
-export default withStyles(styles, { withTheme: true })(Footer);
+export default function Footer() {
+  const classes = useStyles();
+  return (
+    <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Grid container spacing={4} justify="space-evenly">
+        {footers.map((footer) => (
+          <Grid item xs={6} sm={3} key={footer.title}>
+            <Typography variant="h6" color="textPrimary" gutterBottom>
+              {footer.title}
+            </Typography>
+            <ul>
+              {footer.description.map((item) => (
+                <li key={item}>
+                  <Link href="#" variant="subtitle1" color="textSecondary">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Grid>
+        ))}
+      </Grid>
+      <Box mt={5}>
+        <Copyright />
+      </Box>
+    </Container>
+  );
+}

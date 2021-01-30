@@ -1,40 +1,23 @@
-const styles = theme => ({
-    root: {
-        height: "240px",
-        backgroundColor: "#2e2e2e",
-        display: "flex",
-        width: "100%",
-        justifyContent: "center"
-    },
-    linksContainer: {
-        paddingTop: "50px",
-        width: "100%",
-        display: "flex",
-        flexGrow: 1,
-        justifyContent: "space-between"
-    },
-    socialContainer: {
-        paddingTop: "20px",
-        display: "flex",
-        flexGrow: 1,
-        justifyContent: "center"
-    },
-    socialIcon: {
-        padding: "10px"
-    },
-    footerLink: {
-        color: "white",
-        position: "relative",
-        fontWeight: "700",
-        fontFamily: 'Montserrat',
-        fontSize: "24px",
-        cursor: "pointer",
-        textTransform: "capitalize",
-        '&:hover': {
-            textDecoration: 'none',
-            color: theme.palette.primary.main
-        }
-    }
-});
+import { makeStyles } from "@material-ui/core/styles";
 
-export default styles;
+const useStyles = makeStyles((theme) => ({
+    "@global": {
+      ul: {
+        margin: 0,
+        padding: 0,
+        listStyle: "none",
+      },
+    },
+    footer: {
+      borderTop: `1px solid ${theme.palette.divider}`,
+      marginTop: theme.spacing(8),
+      paddingTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3),
+      [theme.breakpoints.up("sm")]: {
+        paddingTop: theme.spacing(6),
+        paddingBottom: theme.spacing(6),
+      },
+    },
+  }));
+
+export default useStyles;
