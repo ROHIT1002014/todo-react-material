@@ -34,8 +34,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignUp() {
+export default function SignUp(props) {
   const classes = useStyles();
+  console.log("output", props.handleSubmit);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleSubmit();
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -47,7 +53,7 @@ export default function SignUp() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
