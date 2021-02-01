@@ -5,16 +5,16 @@ import useStyles from "./styles";
 import { Toolbar } from "@material-ui/core";
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'UPSC', url: '#' },
+  { title: 'CTET', url: '#' },
+  { title: 'Comptetive Coding', url: '#' },
+  { title: 'SSC', url: '#' },
+  { title: 'NDA', url: '#' },
+  { title: 'CDSE', url: '#' },
+  { title: 'SBI PO', url: '#' },
+  { title: 'RRB NTPC', url: '#' },
+  { title: 'RBI', url: '#' },
+  { title: 'IBPS PO', url: '#' },
 ];
 
 export default function MainFeaturedPost(props) {

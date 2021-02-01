@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import Button from "@material-ui/core/Button";
 import useStyles from './styles';
 
 
@@ -41,6 +42,7 @@ export default function MainFeaturedPost(props) {
             <Link variant="subtitle1" href="#">
               {post.linkText}
             </Link>
+            <Button variant="contained">Learn More</Button>
           </div>
         </Grid>
       </Grid>

@@ -75,6 +75,19 @@ export default function SignUp() {
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
+                margin="normal"
+                required
+                fullWidth
+                id="phoneNumber"
+                label="Phone Number"
+                name="phonenumber"
+                autoComplete="phonenumber"
+                autoFocus
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
                 required
                 fullWidth
                 id="email"

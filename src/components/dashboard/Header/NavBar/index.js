@@ -14,7 +14,7 @@ export default function NavBar() {
   return (
     <div>
       <CssBaseline />
-      <TopBar title="Blog" />
+      <TopBar title="Gyanacharya" />
       <AppBar
         position="static"
         color="default"
@@ -28,7 +28,7 @@ export default function NavBar() {
             noWrap
             className={classes.toolbarTitle}
           >
-            Company name
+            Gyanacharya
           </Typography>
           <nav>
             <Link
@@ -37,7 +37,7 @@ export default function NavBar() {
               href="#"
               className={classes.link}
             >
-              Features
+              Courses
             </Link>
             <Link
               variant="button"
@@ -45,7 +45,7 @@ export default function NavBar() {
               href="#"
               className={classes.link}
             >
-              Enterprise
+              Study Material
             </Link>
             <Link
               variant="button"
@@ -53,7 +53,7 @@ export default function NavBar() {
               href="#"
               className={classes.link}
             >
-              Support
+              Live Classes
             </Link>
           </nav>
           <Button
