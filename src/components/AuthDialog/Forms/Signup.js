@@ -57,7 +57,7 @@ export default function SignUp(props) {
       <div className={classes.paper}>
         <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
-          Sign up
+          Sign Up As Teacher
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <Grid container spacing={1}>
