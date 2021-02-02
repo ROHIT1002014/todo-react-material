@@ -8,7 +8,6 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
@@ -36,26 +35,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp(props) {
   const classes = useStyles();
-  const iniUser = {
-    mobileNumber: '',
-    name: '',
-    fatherName: '',
-    email: '',
-    dateOfBirth: '',
-    address: '',
-    highestQualifiation: '',
-    totalExperience: '',
-    onlineExperience: '',
-    subject: '',
-    password1: '',
-    password2: '',
-  }
-  const [user, setUser] = useState(iniUser);
+  const { initUser } = props;
+  const [user, setUser] = useState(initUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-    props.handleSubmit();
+    props.handleSubmit(user);
   };
 
   const handleChange = (e) => {
@@ -133,7 +118,6 @@ export default function SignUp(props) {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="dateOfBirth"
                 name="dateOfBirth"
                 variant="outlined"
                 label="Date of Birth"
@@ -149,10 +133,10 @@ export default function SignUp(props) {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="address"
                 label="Address"
                 name="address"
                 multiline
+                required
                 value={user.address}
                 onChange={handleChange}
                 fullWidth
@@ -166,6 +150,7 @@ export default function SignUp(props) {
                 label="Highest Qualifiation"
                 name="highestQualifiation"
                 fullWidth
+                required
                 value={user.highestQualifiation}
                 onChange={handleChange}
                 variant="outlined"
@@ -177,6 +162,7 @@ export default function SignUp(props) {
                 label="Total Experience"
                 name="totalExperience"
                 fullWidth
+                required
                 value={user.totalExperience}
                 onChange={handleChange}
                 type="number"
@@ -187,8 +173,9 @@ export default function SignUp(props) {
               <TextField
                 id="onlineExperience"
                 label="Online Experience"
-                name="onlineExperience"
+                name="OnlineExperience"
                 fullWidth
+                required
                 value={user.onlineExperience}
                 onChange={handleChange}
                 type="number"
@@ -200,6 +187,7 @@ export default function SignUp(props) {
                 id="subject"
                 label="Subject"
                 name="subject"
+                required
                 value={user.subject}
                 onChange={handleChange}
                 fullWidth
@@ -254,7 +242,7 @@ export default function SignUp(props) {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
