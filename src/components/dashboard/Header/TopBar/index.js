@@ -27,7 +27,7 @@ export default function TopBar(props) {
       <IconButton>
         <SearchIcon />
       </IconButton>
-      <Button variant="outlined" size="small">
+      <Button variant="outlined" size="small" href="/signup">
         Sign up
       </Button>
     </Toolbar>

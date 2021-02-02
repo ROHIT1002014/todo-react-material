@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -36,25 +36,46 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUp(props) {
   const classes = useStyles();
-  console.log("output", props.handleSubmit);
+  const iniUser = {
+    mobileNumber: '',
+    name: '',
+    fatherName: '',
+    email: '',
+    dateOfBirth: '',
+    address: '',
+    highestQualifiation: '',
+    totalExperience: '',
+    onlineExperience: '',
+    subject: '',
+    password1: '',
+    password2: '',
+  }
+  const [user, setUser] = useState(iniUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(user);
     props.handleSubmit();
   };
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setUser((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
+        <Avatar className={classes.avatar} />
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit} noValidate>
-          <Grid container spacing={2}>
+          <Grid container spacing={1}>
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -62,6 +83,8 @@ export default function SignUp(props) {
                 required
                 fullWidth
                 id="mobileNumber"
+                value={user.mobileNumber}
+                onChange={handleChange}
                 label="Mobile Number"
                 name="mobileNumber"
                 autoComplete="phonenumber"
@@ -73,6 +96,8 @@ export default function SignUp(props) {
                 autoComplete="fname"
                 name="name"
                 variant="outlined"
+                value={user.name}
+                onChange={handleChange}
                 required
                 fullWidth
                 id="name"
@@ -85,6 +110,8 @@ export default function SignUp(props) {
                 variant="outlined"
                 required
                 fullWidth
+                value={user.fatherName}
+                onChange={handleChange}
                 id="fatherName"
                 label="Father's Name"
                 name="fatherName"
@@ -96,6 +123,8 @@ export default function SignUp(props) {
                 variant="outlined"
                 required
                 fullWidth
+                value={user.email}
+                onChange={handleChange}
                 id="email"
                 label="Email Address"
                 name="email"
@@ -110,6 +139,8 @@ export default function SignUp(props) {
                 label="Date of Birth"
                 required
                 fullWidth
+                value={user.dateOfBirth}
+                onChange={handleChange}
                 type="date"
                 InputLabelProps={{
                   shrink: true,
@@ -122,22 +153,11 @@ export default function SignUp(props) {
                 label="Address"
                 name="address"
                 multiline
+                value={user.address}
+                onChange={handleChange}
                 fullWidth
                 rows={3}
-                defaultValue="Default Value"
                 variant="outlined"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
               />
             </Grid>
             <Grid item xs={12}>
@@ -146,7 +166,8 @@ export default function SignUp(props) {
                 label="Highest Qualifiation"
                 name="highestQualifiation"
                 fullWidth
-                defaultValue="10th class"
+                value={user.highestQualifiation}
+                onChange={handleChange}
                 variant="outlined"
               />
             </Grid>
@@ -156,18 +177,20 @@ export default function SignUp(props) {
                 label="Total Experience"
                 name="totalExperience"
                 fullWidth
-                defaultValue="1"
+                value={user.totalExperience}
+                onChange={handleChange}
                 type="number"
                 variant="outlined"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
-                id="OnlineExperience"
+                id="onlineExperience"
                 label="Online Experience"
-                name="OnlineExperience"
+                name="onlineExperience"
                 fullWidth
-                defaultValue="1"
+                value={user.onlineExperience}
+                onChange={handleChange}
                 type="number"
                 variant="outlined"
               />
@@ -177,8 +200,9 @@ export default function SignUp(props) {
                 id="subject"
                 label="Subject"
                 name="subject"
+                value={user.subject}
+                onChange={handleChange}
                 fullWidth
-                defaultValue="English"
                 variant="outlined"
               />
             </Grid>
@@ -188,10 +212,12 @@ export default function SignUp(props) {
                 margin="normal"
                 required
                 fullWidth
-                name="password"
+                value={user.password1}
+                onChange={handleChange}
+                name="password1"
                 label="Password"
                 type="password"
-                id="password"
+                id="password1"
                 autoComplete="current-password"
               />
             </Grid>
@@ -201,7 +227,9 @@ export default function SignUp(props) {
                 margin="normal"
                 required
                 fullWidth
-                name="confirmPassword"
+                value={user.password2}
+                onChange={handleChange}
+                name="password2"
                 label="Confirm Password"
                 type="password"
                 id="confirmPassword"
