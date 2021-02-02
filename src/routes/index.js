@@ -6,6 +6,7 @@ import LoginView from './../views/auth/LoginView';
 import RegistrationView from './../views/auth/RegistrationView';
 import SignupView from './../views/auth/SignupVIew';
 import Dashboard from './../views/dashboard/Dashboard';
+import StudentRegistrationView from '../views/auth/StudentRegistrationView';
 
 class Index extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Index extends React.Component {
         <Route exact path="/signup" component={SignupView} />
         <Route exact path="/registration" component={RegistrationView} />
         <Route exact path="/home" component={Dashboard} />
+        <Route exact path="/stureg" component={StudentRegistrationView} />
         {/* <Route exact path="/registrations/:id" component={EditProjectInfo} /> */}
       </Switch>
     );
