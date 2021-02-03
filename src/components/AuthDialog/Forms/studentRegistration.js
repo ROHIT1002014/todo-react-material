@@ -184,7 +184,7 @@ export default function SignUpStudent(props) {
                 onChange={handleChange}
                 id="guardianMobileNumber"
                 label="Guardian Mobile Number"
-                name="guardianMobileNumber"
+                name="guardianContact"
                 autoComplete="phonenumber"
                 autoFocus
               />
