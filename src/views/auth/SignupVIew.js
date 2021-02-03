@@ -4,18 +4,18 @@ import SignUp from "../../components/AuthDialog/Forms/Signup";
 import { teacherRegistration } from '../../services/teacher/index'
 
 const initUser = {
-  mobileNumber: '',
-  name: '',
-  fatherName: '',
-  email: '',
-  dateOfBirth: '',
-  address: '',
-  highestQualifiation: '',
-  totalExperience: '',
-  OnlineExperience: '',
-  subject: '',
-  password1: '',
-  password2: '',
+  mobileNumber: "",
+  name: "",
+  fatherName: "",
+  email: "",
+  dateOfBirth: "2000-12-12",
+  address: "",
+  highestQualifiation: "",
+  totalExperience: "",
+  OnlineExperience: "",
+  subject: "",
+  password1: "",
+  password2: "",
 }
 
 class SignupView extends Component {
