@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -36,12 +36,20 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignUpStudent(props) {
   const classes = useStyles();
-  console.log("output", props.handleSubmit);
+  const { initUser } = props;
+  const [user, setUser] = useState(initUser);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.handleSubmit();
+    props.handleSubmit(user);
   };
+
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    setUser((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
 
   return (
     <Container component="main" maxWidth="xs">
