@@ -50,6 +50,7 @@ export default function SignUpStudent(props) {
       ...prevState,
       [name]: value
     }));
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -72,6 +73,8 @@ export default function SignUpStudent(props) {
                 id="mobileNumber"
                 label="Mobile Number"
                 name="mobileNumber"
+                value={user.mobileNumber}
+                onChange={handleChange}
                 autoComplete="phonenumber"
                 autoFocus
               />
@@ -83,6 +86,8 @@ export default function SignUpStudent(props) {
                 variant="outlined"
                 required
                 fullWidth
+                value={user.name}
+                onChange={handleChange}
                 id="name"
                 label="Name"
                 autoFocus
@@ -94,6 +99,8 @@ export default function SignUpStudent(props) {
                 required
                 fullWidth
                 id="fatherName"
+                value={user.fatherName}
+                onChange={handleChange}
                 label="Father's Name"
                 name="fatherName"
                 autoComplete="lname"
@@ -104,6 +111,8 @@ export default function SignUpStudent(props) {
                 variant="outlined"
                 required
                 fullWidth
+                value={user.email}
+                onChange={handleChange}
                 id="email"
                 label="Email Address"
                 name="email"
@@ -118,6 +127,8 @@ export default function SignUpStudent(props) {
                 label="Date of Birth"
                 required
                 fullWidth
+                value={user.dateOfBirth}
+                onChange={handleChange}
                 type="date"
                 InputLabelProps={{
                   shrink: true,
@@ -130,9 +141,10 @@ export default function SignUpStudent(props) {
                 label="Address"
                 name="address"
                 multiline
+                value={user.address}
+                onChange={handleChange}
                 fullWidth
                 rows={3}
-                defaultValue="Default Value"
                 variant="outlined"
               />
             </Grid>
@@ -143,8 +155,9 @@ export default function SignUpStudent(props) {
                 name="currentInstitute"
                 multiline
                 fullWidth
+                value={user.currentInstitute}
+                onChange={handleChange}
                 rows={3}
-                defaultValue="Default Value"
                 variant="outlined"
               />
             </Grid>
@@ -154,9 +167,10 @@ export default function SignUpStudent(props) {
                 label="guardianProfession"
                 name="guardianProfession"
                 multiline
+                value={user.guardianProfession}
+                onChange={handleChange}
                 fullWidth
                 rows={3}
-                defaultValue="Default Value"
                 variant="outlined"
               />
             </Grid>
@@ -166,6 +180,8 @@ export default function SignUpStudent(props) {
                 margin="normal"
                 required
                 fullWidth
+                value={user.guardianMobileNumber}
+                onChange={handleChange}
                 id="guardianMobileNumber"
                 label="Guardian Mobile Number"
                 name="guardianMobileNumber"
@@ -179,10 +195,12 @@ export default function SignUpStudent(props) {
                 margin="normal"
                 required
                 fullWidth
-                name="password"
+                value={user.password1}
+                onChange={handleChange}
+                name="password1"
                 label="Password"
                 type="password"
-                id="password"
+                id="password1"
                 autoComplete="current-password"
               />
             </Grid>
@@ -192,7 +210,9 @@ export default function SignUpStudent(props) {
                 margin="normal"
                 required
                 fullWidth
-                name="confirmPassword"
+                value={user.password2}
+                onChange={handleChange}
+                name="password2"
                 label="Confirm Password"
                 type="password"
                 id="confirmPassword"
