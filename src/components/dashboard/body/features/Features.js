@@ -16,7 +16,7 @@ const description = "This is a media card. You can use this section to describe"
   "the content.This is a media card. You can use this section to describe" +
   "the content.This is a media card. You can use this section to describe the content."
 
-export default function Album(props) {
+export default function Album() {
   const classes = useStyles();
   // const { post } = props
   return (

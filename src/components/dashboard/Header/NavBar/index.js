@@ -2,15 +2,16 @@ import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
-import Link from '@material-ui/core/Link';
-import { Toolbar, AppBar } from "@material-ui/core";
+import { Toolbar, AppBar, Box } from "@material-ui/core";
+import Menu from "./Menu";
 import useStyles from "./styles";
 
-import TopBar from '../TopBar/index';
-import Tags from '../Tags/Tags';
+import TopBar from "../TopBar/index";
+import Tags from "../Tags/Tags";
 
-export default function NavBar() {
+export default function NavBar(props) {
   const classes = useStyles();
+  const { navlinkList } = props;
   return (
     <div>
       <CssBaseline />
@@ -30,36 +31,15 @@ export default function NavBar() {
           >
             Gyanacharya
           </Typography>
-          <nav>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Courses
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Study Material
-            </Link>
-            <Link
-              variant="button"
-              color="textPrimary"
-              href="#"
-              className={classes.link}
-            >
-              Live Classes
-            </Link>
-          </nav>
+          {navlinkList.map((item, index) => (
+            <Box mx={1} key={index}>
+              <Menu title={item.name} dropdownList={item.dropdownList} />
+            </Box>
+          ))}
           <Button
             href="/login"
             color="primary"
-            variant="outlined"
+            variant="contained"
             className={classes.link}
           >
             Login

@@ -13,7 +13,11 @@ export default function TopBar(props) {
 
   return (
     <Toolbar className={classes.toolbar}>
-      <Button size="small">Subscribe</Button>
+      <Button
+        size="small"
+        color="secondary"
+        variant="contained"
+      >Download app</Button>
       <Typography
         component="h2"
         variant="h5"
@@ -27,7 +31,12 @@ export default function TopBar(props) {
       <IconButton>
         <SearchIcon />
       </IconButton>
-      <Button variant="outlined" size="small" href="/signup">
+      <Button
+        variant="outlined"
+        color="primary"
+        size="small"
+        href="/signup"
+      >
         Sign up
       </Button>
     </Toolbar>

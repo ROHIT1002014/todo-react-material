@@ -32,6 +32,13 @@ const initState = {
       "We at Gyanacharya believe that everyone should get education, profit" +
       "doesn't matter when it comes to value."
   },
+  navlinkList: [
+    { name: 'Home', dropdownList: ['asdf', 'asdlf', 'list'] },
+    { name: 'books', dropdownList: ['asdfsdf', 'asdasdflf', 'sadlist'] },
+    { name: 'zoom meeting', dropdownList: ['asdfsdf', 'asdlf', 'list'] },
+    { name: 'course', dropdownList: ['asdfdf', 'asdlasdff', 'lisasdt'] },
+    { name: 'about', dropdownList: ['asdfad', 'asdlfasdf', 'lisasdft'] },
+  ],
   footers: [
     {
       title: "Company",

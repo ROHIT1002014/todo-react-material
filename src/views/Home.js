@@ -13,11 +13,11 @@ import Description from "../components/dashboard/body/description/Description";
 import Footer from "../components/dashboard/Footer";
 
 const ClippedDrawer = (props) => {
-  const { featuredPosts, post, footers } = props;
+  const { featuredPosts, post, footers, navlinkList } = props;
   return (
     <React.Fragment>
       <CssBaseline />
-      <NavBar />
+      <NavBar navlinkList={navlinkList} />
       <Introduction post={post} />
       <Grid container spacing={4}>
         {featuredPosts.map((post) => (
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
     featuredPosts: state.featuredPosts,
     post: state.post,
     footers: state.footers,
-
+    navlinkList: state.navlinkList,
   }
 }
 

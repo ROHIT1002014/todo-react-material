@@ -12,7 +12,12 @@ class Header extends React.Component {
     return (
       <div>
         {/* <TopBar /> */}
-        <NavBar classes={classes} brand={brand} categories={categories} />
+        <NavBar
+          classes={classes}
+          brand={brand}
+          categories={categories}
+          navlinkList={this.props.navlinkList}
+        />
       </div>
     );
   }
