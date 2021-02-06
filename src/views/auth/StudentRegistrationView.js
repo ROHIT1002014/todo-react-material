@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import Container from "@material-ui/core/Container";
+
 import SignUpStudent from "../../components/AuthDialog/Forms/studentRegistration";
 import { studentRegistration } from '../../services/student/index'
 

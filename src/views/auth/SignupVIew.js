@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+
 import Container from "@material-ui/core/Container";
+
 import SignUp from "../../components/AuthDialog/Forms/Signup";
 import { teacherRegistration } from '../../services/teacher/index'
 
@@ -22,7 +24,6 @@ class SignupView extends Component {
   handleSubmit = (user) => {
     console.log('Sign up form submit.',user);
     teacherRegistration(user);
-    // this.props.addRohit(this.state)
   };
 
   render() {

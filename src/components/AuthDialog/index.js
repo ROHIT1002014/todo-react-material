@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
 import {
   Paper,
   Dialog,
@@ -6,12 +10,13 @@ import {
   withStyles,
   Link,
 } from "@material-ui/core";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+
+import Close from "@material-ui/icons/Close";
+
 import LoginForm from "./Forms/LoginForm";
 import RegisterForm from "./Forms/RegisterForm";
 import * as Actions from "../../../store/actions/alerts";
-import Close from "@material-ui/icons/Close";
+
 import styles from "./styles";
 
 function PaperComponent(props) {
