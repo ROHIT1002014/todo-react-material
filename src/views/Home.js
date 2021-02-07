@@ -11,7 +11,10 @@ import Features from "../components/dashboard/body/features/Features";
 import Introduction from "../components/dashboard/body/introduction/Introduction";
 import Description from "../components/dashboard/body/description/Description";
 import Footer from "../components/dashboard/Footer";
-
+// Important github
+// https://github.com/marmelab/react-admin/blob/master/examples/demo/src/dashboard/Welcome.tsx
+// for cerosal
+// https://github.com/merikbest/ecommerce-spring-reactjs
 const ClippedDrawer = (props) => {
   const { featuredPosts, post, footers, navlinkList } = props;
   return (
