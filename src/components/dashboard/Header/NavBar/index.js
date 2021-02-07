@@ -1,11 +1,16 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import { Toolbar, AppBar, Box } from "@material-ui/core";
+
+import {
+  Typography,
+  CssBaseline,
+  Toolbar,
+  Button,
+  AppBar,
+  Box
+} from "@material-ui/core";
+
 import Menu from "./Menu";
 import useStyles from "./styles";
-
 import TopBar from "../TopBar/index";
 import Tags from "../Tags/Tags";
 
@@ -33,7 +38,10 @@ export default function NavBar(props) {
           </Typography>
           {navlinkList.map((item, index) => (
             <Box mx={1} key={index}>
-              <Menu title={item.name} dropdownList={item.dropdownList} />
+              <Menu
+                title={item.name}
+                dropdownList={item.dropdownList}
+              />
             </Box>
           ))}
           <Button
