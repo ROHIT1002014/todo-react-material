@@ -16,6 +16,7 @@ import Footer from "../components/dashboard/Footer";
 // for cerosal
 // https://github.com/merikbest/ecommerce-spring-reactjs
 const ClippedDrawer = (props) => {
+  console.log(`${process.env.REACT_APP_BAR}`)
   const { featuredPosts, post, footers, navlinkList } = props;
   return (
     <React.Fragment>
