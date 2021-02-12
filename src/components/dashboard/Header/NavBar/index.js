@@ -13,6 +13,7 @@ import Menu from "./Menu";
 import useStyles from "./styles";
 import TopBar from "../TopBar/index";
 import Tags from "../Tags/Tags";
+import logo from "../../../../images/logo.jpeg"
 
 export default function NavBar(props) {
   const classes = useStyles();
@@ -34,7 +35,11 @@ export default function NavBar(props) {
             noWrap
             className={classes.toolbarTitle}
           >
-            Gyanacharya
+            <a
+              href="/"
+            >
+            <img src={logo} height={60} width={120} alt="Logo"  />
+            </a>
           </Typography>
           {navlinkList.map((item, index) => (
             <Box mx={1} key={index}>
