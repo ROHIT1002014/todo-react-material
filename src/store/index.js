@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import rootReducer from './home/rootReducer'
+import rootReducer from './reducers/rootReducer'
 
 // Imports: Reducers
 import authReducer from './reducers/authReducer';
