@@ -35,10 +35,10 @@ const ClippedDrawer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    featuredPosts: state.featuredPosts,
-    post: state.post,
-    footers: state.footers,
-    navlinkList: state.navlinkList,
+    featuredPosts: state.rootReducer.featuredPosts,
+    post: state.rootReducer.post,
+    footers: state.rootReducer.footers,
+    navlinkList: state.rootReducer.navlinkList,
   }
 }
 
