@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -46,8 +46,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn() {
+export default function SignIn(props) {
   const classes = useStyles();
+  const { initUser } = props;
+  const [user, setUser] = useState(initUser);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.handleSubmit(user);
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -59,15 +74,17 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} onSubmit={handleSubmit} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="phoneNumber"
-            label="Phone Number"
-            name="phonenumber"
+            id="mobileNumber"
+            value={user.mobileNumber}
+            onChange={handleChange}
+            label="Mobile Number"
+            name="mobileNumber"
             autoComplete="phonenumber"
             autoFocus
           />
@@ -77,6 +94,8 @@ export default function SignIn() {
             required
             fullWidth
             name="password"
+            value={user.password}
+            onChange={handleChange}
             label="Password"
             type="password"
             id="password"

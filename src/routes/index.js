@@ -13,7 +13,9 @@ import { GuardProvider, GuardedRoute } from "react-router-guards";
 const requireLogin = (to, from, next) => {
   if (to.meta.auth) {
     // check condition and then redirect to required page.
-    if (true) {
+    var authen = localStorage.getItem('isAuth');
+    console.log("the output",typeof(authen))
+    if (Boolean(authen)) {
       next();
     }
     next.redirect("/login");
@@ -35,7 +37,7 @@ class Index extends React.Component {
             path="/registration"
             component={RegistrationView}
           />
-          <GuardedRoute exact path="/home" component={Dashboard} />
+          <GuardedRoute exact path="/home" component={Dashboard} meta={{ auth: true }} />
           <GuardedRoute
             exact
             path="/stureg"
