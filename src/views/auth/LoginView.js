@@ -1,9 +1,12 @@
 import React, { Component, StrictMode } from 'react';
 
 import Container from '@material-ui/core/Container';
+import { connect } from 'react-redux';
 
 import LoginForm from '../../components/AuthDialog/Forms/LoginForm';
-import { loginAuth } from '../../services/UserAuth';
+import { loginAuth } from './../../services/UserAuth';
+import { authSuccess } from './../../store/actions/auth';
+
 
 const initUser = {
   mobileNumber: "",
@@ -15,6 +18,8 @@ class LoginView extends Component {
   handleSubmit = (user) => {
       console.log('Login form submit.',user);
     loginAuth(user).then((res) => {
+      console.log('alsdfjalksd', res);
+      this.props.authSuccess(res.data.auth_token);
       this.props.history.push('/home')
     })
     };
@@ -31,4 +36,16 @@ class LoginView extends Component {
   }
 }
 
-export default LoginView;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    authSuccess: (token) => dispatch(authSuccess(token))
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+  token: state.authReducer.token,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginView);

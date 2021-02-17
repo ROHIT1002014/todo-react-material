@@ -10,8 +10,7 @@ export const authStart = () => {
 export const authSuccess = (token) => {
     return {
         type : actionTypes.AUTH_SUCCESS,
-        token : token,
-
+        token,
     }
 }
 
@@ -88,7 +87,7 @@ export const checkAuthState = () => {
 
     return dispatch => {
     const token = localStorage.getItem('token');
-    if(token == undefined){
+    if(token === undefined){
         dispatch(logout());
     }
     else{

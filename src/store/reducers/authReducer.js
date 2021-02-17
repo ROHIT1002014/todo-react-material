@@ -15,6 +15,7 @@ const authStart = (state, action) => {
 };
 
 const authSuccess = (state, action) => {
+  console.log('reducer called .............', action);
   return updateObject(state, {
     token: action.token,
     error: null,
