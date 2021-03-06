@@ -5,15 +5,15 @@ import PropTypes from 'prop-types';
 import {
   AppBar,
   Toolbar,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import Logo from 'src/components/Logo';
 
 const useStyles = makeStyles(({
   root: {},
   toolbar: {
-    height: 64
-  }
+    height: 64,
+  },
 }));
 
 const TopBar = ({ className, ...rest }) => {
@@ -35,7 +35,7 @@ const TopBar = ({ className, ...rest }) => {
 };
 
 TopBar.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default TopBar;

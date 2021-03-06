@@ -1,16 +1,16 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    backgroundColor: "red",
+    backgroundColor: 'red',
   },
   toolbarTitle: {
     flex: 1,
   },
   toolbarSecondary: {
-    justifyContent: "space-between",
-    overflowX: "auto",
+    justifyContent: 'space-between',
+    overflowX: 'auto',
   },
   toolbarLink: {
     padding: theme.spacing(1),

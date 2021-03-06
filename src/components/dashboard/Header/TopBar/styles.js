@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   toolbarSecondary: {
-    justifyContent: "space-between",
-    overflowX: "auto",
+    justifyContent: 'space-between',
+    overflowX: 'auto',
   },
   toolbarLink: {
     padding: theme.spacing(1),

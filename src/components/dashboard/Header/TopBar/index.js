@@ -1,15 +1,14 @@
-import React from "react";
-import Toolbar from "@material-ui/core/Toolbar/index";
-import Button from "@material-ui/core/Button";
+import React from 'react';
+import Toolbar from '@material-ui/core/Toolbar/index';
+import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
 import useStyles from './styles';
 
-
 export default function TopBar(props) {
-    const classes = useStyles();
-    const { title } = props;
+  const classes = useStyles();
+  const { title } = props;
 
   return (
     <Toolbar className={classes.toolbar}>
@@ -17,7 +16,9 @@ export default function TopBar(props) {
         size="small"
         color="secondary"
         variant="contained"
-      >Download app</Button>
+      >
+        Download app
+      </Button>
       <Typography
         component="h2"
         variant="h5"

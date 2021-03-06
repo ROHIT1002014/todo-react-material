@@ -1,29 +1,29 @@
-import React from "react";
-import { Switch } from "react-router-dom";
+import React from 'react';
+import { Switch } from 'react-router-dom';
 
-import Home from "./../views/Home";
-import LoginView from "./../views/auth/LoginView";
-import DemoVideoView from "./../views/auth/DemoVideoView";
-import RegistrationView from "./../views/auth/RegistrationView";
-import SignupView from "./../views/auth/SignupVIew";
-import Dashboard from "./../views/dashboard/Dashboard";
-import StudentRegistrationView from "../views/auth/StudentRegistrationView";
-import NotFoundView from "./../views/errors/NotFoundView";
-import CustomerListView from "./../views/customer/CustomerListView";
-import { GuardProvider, GuardedRoute } from "react-router-guards";
+import { GuardProvider, GuardedRoute } from 'react-router-guards';
+import Home from '../views/Home';
+import LoginView from '../views/auth/LoginView';
+import DemoVideoView from '../views/auth/DemoVideoView';
+import RegistrationView from '../views/auth/RegistrationView';
+import SignupView from '../views/auth/SignupVIew';
+import Dashboard from '../views/dashboard/Dashboard';
+import StudentRegistrationView from '../views/auth/StudentRegistrationView';
+import NotFoundView from '../views/errors/NotFoundView';
+import CustomerListView from '../views/customer/CustomerListView';
 
 const requireLogin = (to, from, next) => {
   if (to.meta.auth) {
     // check condition and then redirect to required page.
-    var authen = localStorage.getItem("isAuth");
-    console.log("the output", typeof authen);
+    const authen = localStorage.getItem('isAuth');
+    console.log('the output', typeof authen);
     // if (Boolean(authen)) {
     //   next();
     // }
     if (true) {
       next();
     }
-    next.redirect("/login");
+    next.redirect('/login');
   } else {
     next();
   }

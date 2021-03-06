@@ -15,7 +15,7 @@ import {
   TablePagination,
   TableRow,
   Typography,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import getInitials from '../../../utils/getInitials';
 import IOSSwitch from '../../../components/dashboard/body/togglebutton/ToggleButton';
@@ -23,8 +23,8 @@ import IOSSwitch from '../../../components/dashboard/body/togglebutton/ToggleBut
 const useStyles = makeStyles((theme) => ({
   root: {},
   avatar: {
-    marginRight: theme.spacing(2)
-  }
+    marginRight: theme.spacing(2),
+  },
 }));
 
 const Results = ({ className, customers, ...rest }) => {
@@ -58,7 +58,7 @@ const Results = ({ className, customers, ...rest }) => {
     } else if (selectedIndex > 0) {
       newSelectedCustomerIds = newSelectedCustomerIds.concat(
         selectedCustomerIds.slice(0, selectedIndex),
-        selectedCustomerIds.slice(selectedIndex + 1)
+        selectedCustomerIds.slice(selectedIndex + 1),
       );
     }
 
@@ -176,8 +176,8 @@ const Results = ({ className, customers, ...rest }) => {
 };
 
 Results.propTypes = {
-  className: PropTypes.string,
-  customers: PropTypes.array.isRequired
+  // className: PropTypes.string,
+  customers: PropTypes.array.isRequired,
 };
 
 export default Results;

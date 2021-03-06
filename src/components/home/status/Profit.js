@@ -1,6 +1,6 @@
-import React from "react";
-import clsx from "clsx";
-import PropTypes from "prop-types";
+import React from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import {
   Avatar,
   Card,
@@ -9,12 +9,12 @@ import {
   Typography,
   makeStyles,
   colors,
-} from "@material-ui/core";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+} from '@material-ui/core';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 const useStyles = makeStyles(() => ({
   root: {
-    height: "100%",
+    height: '100%',
   },
   avatar: {
     backgroundColor: colors.indigo[600],

@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Link from "@material-ui/core/Link";
-import useStyles from "./styles";
-import { Toolbar } from "@material-ui/core";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Link from '@material-ui/core/Link';
+import { Toolbar } from '@material-ui/core';
+import useStyles from './styles';
 
 const sections = [
   { title: 'UPSC', url: '#' },
@@ -17,12 +17,12 @@ const sections = [
   { title: 'IBPS PO', url: '#' },
 ];
 
-export default function MainFeaturedPost(props) {
+export default function MainFeaturedPost() {
   // const { post } = props;
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
       <Toolbar
         component="nav"
         variant="dense"
@@ -41,7 +41,7 @@ export default function MainFeaturedPost(props) {
           </Link>
         ))}
       </Toolbar>
-    </React.Fragment>
+    </>
   );
 }
 

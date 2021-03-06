@@ -1,6 +1,6 @@
-import React from "react";
-import clsx from "clsx";
-import PropTypes from "prop-types";
+import React from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
@@ -10,13 +10,13 @@ import {
   Typography,
   colors,
   makeStyles,
-} from "@material-ui/core";
-import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
-import PeopleIcon from "@material-ui/icons/PeopleOutlined";
+} from '@material-ui/core';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import PeopleIcon from '@material-ui/icons/PeopleOutlined';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100%",
+    height: '100%',
   },
   avatar: {
     backgroundColor: colors.green[600],

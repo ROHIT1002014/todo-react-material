@@ -1,28 +1,28 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Container from "@material-ui/core/Container";
+import Container from '@material-ui/core/Container';
 
-import SignUp from "../../components/AuthDialog/Forms/Signup";
-import { teacherRegistration } from '../../services/teacher/index'
+import SignUp from '../../components/AuthDialog/Forms/Signup';
+import { teacherRegistration } from '../../services/teacher/index';
 
 const initUser = {
-  mobileNumber: "",
-  name: "",
-  fatherName: "",
-  email: "",
-  dateOfBirth: "2000-12-12",
-  address: "",
-  highestQualifiation: "",
-  totalExperience: "",
-  OnlineExperience: "",
-  subject: "",
-  password1: "",
-  password2: "",
-}
+  mobileNumber: '',
+  name: '',
+  fatherName: '',
+  email: '',
+  dateOfBirth: '2000-12-12',
+  address: '',
+  highestQualifiation: '',
+  totalExperience: '',
+  OnlineExperience: '',
+  subject: '',
+  password1: '',
+  password2: '',
+};
 
 class SignupView extends Component {
   handleSubmit = (user) => {
-    console.log('Sign up form submit.',user);
+    console.log('Sign up form submit.', user);
     teacherRegistration(user);
   };
 

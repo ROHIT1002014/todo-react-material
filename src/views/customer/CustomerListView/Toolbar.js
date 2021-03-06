@@ -9,18 +9,18 @@ import {
   TextField,
   InputAdornment,
   SvgIcon,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import { Search as SearchIcon } from 'react-feather';
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   importButton: {
-    marginRight: theme.spacing(1)
+    marginRight: theme.spacing(1),
   },
   exportButton: {
-    marginRight: theme.spacing(1)
-  }
+    marginRight: theme.spacing(1),
+  },
 }));
 
 const Toolbar = ({ className, ...rest }) => {
@@ -64,7 +64,7 @@ const Toolbar = ({ className, ...rest }) => {
                         <SearchIcon />
                       </SvgIcon>
                     </InputAdornment>
-                  )
+                  ),
                 }}
                 placeholder="Search customer"
                 variant="outlined"
@@ -78,7 +78,7 @@ const Toolbar = ({ className, ...rest }) => {
 };
 
 Toolbar.propTypes = {
-  className: PropTypes.string
+  // className: PropTypes.string,
 };
 
 export default Toolbar;

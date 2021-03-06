@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   Box,
   Container,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import Page from '../../../components/Page';
 import Results from './Results';
@@ -15,15 +15,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
     minHeight: '100%',
-  },
-  root: {
-    backgroundColor: theme.palette.background.dark,
     display: 'flex',
     height: '100%',
     overflow: 'hidden',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(2),
-    width: '100%'
+    width: '100%',
   },
   wrapper: {
     display: 'flex',
@@ -31,19 +28,19 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     paddingTop: 64,
     [theme.breakpoints.up('lg')]: {
-      paddingLeft: 256
-    }
+      paddingLeft: 256,
+    },
   },
   contentContainer: {
     display: 'flex',
     flex: '1 1 auto',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   content: {
     flex: '1 1 auto',
     height: '100%',
-    overflow: 'auto'
-  }
+    overflow: 'auto',
+  },
 }));
 
 const CustomerListView = () => {

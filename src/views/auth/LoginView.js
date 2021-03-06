@@ -4,25 +4,23 @@ import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
 
 import LoginForm from '../../components/AuthDialog/Forms/LoginForm';
-import { loginAuth } from './../../services/UserAuth';
-import { authSuccess } from './../../store/actions/auth';
-
+import { loginAuth } from '../../services/UserAuth';
+import { authSuccess } from '../../store/actions/auth';
 
 const initUser = {
-  mobileNumber: "",
-  password: ""
-}
-
+  mobileNumber: '',
+  password: '',
+};
 
 class LoginView extends Component {
   handleSubmit = (user) => {
-      console.log('Login form submit.',user);
+    console.log('Login form submit.', user);
     loginAuth(user).then((res) => {
       console.log('alsdfjalksd', res);
       this.props.authSuccess(res.data.auth_token);
-      this.props.history.push('/home')
-    })
-    };
+      this.props.history.push('/home');
+    });
+  };
 
   render() {
     return (
@@ -36,16 +34,12 @@ class LoginView extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    authSuccess: (token) => dispatch(authSuccess(token))
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  authSuccess: (token) => dispatch(authSuccess(token)),
+});
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) => ({
   token: state.authReducer.token,
-  }
-}
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginView);

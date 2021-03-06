@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import Container from "@material-ui/core/Container";
+import Container from '@material-ui/core/Container';
 
-import AddressForm from "../../components/AuthDialog/Forms/userRegtrationForms/AddressForm";
+import AddressForm from '../../components/AuthDialog/Forms/userRegtrationForms/AddressForm';
 
 class RegistrationView extends Component {
   render() {

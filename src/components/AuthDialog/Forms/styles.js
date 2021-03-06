@@ -1,4 +1,4 @@
-const styles = (theme) => ({
+const styles = () => ({
   // paper: {
   //   marginTop: theme.spacing(8),
   //   display: "flex",

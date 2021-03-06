@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 import {
   Paper,
@@ -9,21 +9,21 @@ import {
   DialogContent,
   withStyles,
   Link,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import Close from "@material-ui/icons/Close";
+import Close from '@material-ui/icons/Close';
 
-import LoginForm from "./Forms/LoginForm";
-import RegisterForm from "./Forms/RegisterForm";
-import * as Actions from "../../../store/actions/alerts";
+import LoginForm from './Forms/LoginForm';
+import RegisterForm from './Forms/RegisterForm';
+import * as Actions from '../../../store/actions/alerts';
 
-import styles from "./styles";
+import styles from './styles';
 
 function PaperComponent(props) {
   return (
     <Paper
       {...props}
-      style={{ width: "auto", maxWidth: "450px", height: "auto" }}
+      style={{ width: 'auto', maxWidth: '450px', height: 'auto' }}
     />
   );
 }
@@ -34,7 +34,7 @@ class AuthDialog extends Component {
     completed: false,
   };
 
-  handleClose = () => {
+  thihandleClose = () => {
     this.props.hideAuth();
   };
 
@@ -58,7 +58,7 @@ class AuthDialog extends Component {
           maxWidth="lg"
           aria-labelledby="draggable-dialog-title"
         >
-          <DialogContent style={{ overflow: "hidden" }}>
+          <DialogContent style={{ overflow: 'hidden' }}>
             <div className="flex mb-4 h-8">
               <div className="w-3/4">
                 {register && (
@@ -69,7 +69,7 @@ class AuthDialog extends Component {
               <div className="w-1/4 flex justify-end">
                 <Close
                   onClick={this.handleClose}
-                  style={{ cursor: "pointer" }}
+                  style={{ cursor: 'pointer' }}
                 />
               </div>
             </div>
@@ -83,7 +83,7 @@ class AuthDialog extends Component {
                     color="primary"
                     className={classes.submitButtonText}
                     onClick={this.handleLoginNav.bind(this)}
-                    style={{ color: "red" }}
+                    style={{ color: 'red' }}
                   >
                     Go to Login
                   </Link>
@@ -95,7 +95,7 @@ class AuthDialog extends Component {
                     color="primary"
                     className={classes.submitButtonText}
                     onClick={this.handleRegisterNav.bind(this)}
-                    style={{ color: "red", marginLeft: "3px" }}
+                    style={{ color: 'red', marginLeft: '3px' }}
                   >
                     Register / Sign Up
                   </Link>
@@ -115,7 +115,7 @@ function mapDispatchToProps(dispatch) {
       hideAuth: Actions.hideAuth,
       switchTab: Actions.switchTab,
     },
-    dispatch
+    dispatch,
   );
 }
 
@@ -127,5 +127,5 @@ function mapStateToProps({ alerts }) {
 }
 
 export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(AuthDialog)
+  connect(mapStateToProps, mapDispatchToProps)(AuthDialog),
 );

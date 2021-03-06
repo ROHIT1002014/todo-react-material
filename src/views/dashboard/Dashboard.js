@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import clsx from "clsx";
+import React, { Component } from 'react';
+import clsx from 'clsx';
 
 import {
   makeStyles,
@@ -7,33 +7,33 @@ import {
   Container,
   Grid,
   Paper,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 
-import Deposits from "./../../components/home/Deposite";
-import Orders from "./../../components/home/Order";
-import Header from "./../../components/home/header/Header";
-import Marks from "./../../components/home/status/Marks";
-import Profit from "./../../components/home/status/Profit";
-import Progress from "./../../components/home/status/Progress";
-import StudentsStatus from "./../../components/home/status/StudentsStatus";
-import LatestCourse from "./../../components/home/Course/LatestCourse";
-import LatestEnrolledCourse from "./../../components/home/Course/LatestEnrolledCourse";
-import { whoAmI } from "./../../services/UserAuth";
+import Deposits from '../../components/home/Deposite';
+import Orders from '../../components/home/Order';
+import Header from '../../components/home/header/Header';
+import Marks from '../../components/home/status/Marks';
+import Profit from '../../components/home/status/Profit';
+import Progress from '../../components/home/status/Progress';
+import StudentsStatus from '../../components/home/status/StudentsStatus';
+import LatestCourse from '../../components/home/Course/LatestCourse';
+import LatestEnrolledCourse from '../../components/home/Course/LatestEnrolledCourse';
+import { whoAmI } from '../../services/UserAuth';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    display: 'flex',
     paddingBottom: theme.spacing(3),
     paddingTop: theme.spacing(3),
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 2,
-    height: "100vh",
-    overflow: "auto",
+    height: '100vh',
+    overflow: 'auto',
   },
   container: {
     paddingTop: theme.spacing(4),
@@ -41,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
   },
   fixedHeight: {
     height: 240,
@@ -54,14 +54,15 @@ class Dashboard extends Component {
   componentDidMount() {
     console.log('--------------------', this.props);
     whoAmI(this.props.token).then((res) => {
-      console.log("who am i response", res);
+      console.log('who am i response', res);
     });
   }
+
   render() {
     const { classes } = this.props;
     console.log(classes);
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-    console.log("///////////////////////////////////////////////", this.props);
+    console.log('///////////////////////////////////////////////', this.props);
     return (
       <div className={classes.root}>
         <CssBaseline />
@@ -92,7 +93,7 @@ class Dashboard extends Component {
             <Grid container spacing={3}>
               {/* Chart */}
               <Grid item xs={12} md={8} lg={9}>
-                <Paper className={fixedHeightPaper}></Paper>
+                <Paper className={fixedHeightPaper} />
               </Grid>
               {/* Recent Deposits */}
               <Grid item xs={12} md={4} lg={3}>
@@ -114,10 +115,8 @@ class Dashboard extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    token: state.authReducer.token,
-  };
-};
+const mapStateToProps = (state) => ({
+  token: state.authReducer.token,
+});
 
 export default connect(mapStateToProps)(withStyles(useStyles)(Dashboard));

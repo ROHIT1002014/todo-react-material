@@ -1,5 +1,5 @@
-import * as actionTypes from "../actions/actionTypes";
-import { updateObject } from "./utility";
+import * as actionTypes from '../actions/actionTypes';
+import { updateObject } from './utility';
 
 const initialstate = {
   loading: false,
@@ -7,12 +7,10 @@ const initialstate = {
   token: null,
 };
 
-const authStart = (state, action) => {
-  return updateObject(state, {
-    error: null,
-    loading: true,
-  });
-};
+const authStart = (state) => updateObject(state, {
+  error: null,
+  loading: true,
+});
 
 const authSuccess = (state, action) => {
   console.log('reducer called .............', action);
@@ -23,20 +21,16 @@ const authSuccess = (state, action) => {
   });
 };
 
-const authFail = (state, action) => {
-  return {
-    ...state,
-    error: action.error,
-    loading: false,
-  };
-};
+const authFail = (state, action) => ({
+  ...state,
+  error: action.error,
+  loading: false,
+});
 
-const logout = (state, action) => {
-  return {
-    ...state,
-    token: null,
-  };
-};
+const logout = (state) => ({
+  ...state,
+  token: null,
+});
 
 const authReducer = (state = initialstate, action) => {
   switch (action.type) {

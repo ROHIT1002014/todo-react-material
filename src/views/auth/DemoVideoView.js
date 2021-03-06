@@ -1,21 +1,19 @@
 import React, { Component, StrictMode } from 'react';
 
 import Container from '@material-ui/core/Container';
-import { connect } from 'react-redux';
 
 import DemoVideoForm from '../../components/AuthDialog/Forms/DemoVideoForm';
 
 const initUser = {
-  title: "",
-  description: "",
-  file: ""
-}
-
+  title: '',
+  description: '',
+  file: '',
+};
 
 class DemoVideoView extends Component {
   handleSubmit = (user) => {
-      console.log('Video form submit.',user);
-    };
+    console.log('Video form submit.', user);
+  };
 
   render() {
     return (

@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import NavBar from "./NavBar";
+import React from 'react';
+import PropTypes from 'prop-types';
 // import TopBar from "./TopBar";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import NavBar from './NavBar';
 
 class Header extends React.Component {
   render() {
@@ -38,7 +38,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({}, dispatch);
 }
 
-function mapStateToProps({ categories }) {
+function mapStateToProps() {
   return {};
 }
 

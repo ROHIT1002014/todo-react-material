@@ -11,7 +11,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText,
-  makeStyles
+  makeStyles,
 } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -21,42 +21,42 @@ const data = [
     id: 'afsldkjfal',
     name: 'Dropbox',
     imageUrl: '/static/images/products/product_1.png',
-    updatedAt: 'askdfjd'
+    updatedAt: 'askdfjd',
   },
   {
     id: 'afsldkjfalasdfafd',
     name: 'Medium Corporation',
     imageUrl: '/static/images/products/product_2.png',
-    updatedAt: 'askdfjd'
+    updatedAt: 'askdfjd',
   },
   {
     id: 'askdfjad',
     name: 'Slack',
     imageUrl: '/static/images/products/product_3.png',
-    updatedAt: 'alsdkfasdf'
+    updatedAt: 'alsdkfasdf',
   },
   {
     id: 'askdfjagsdfadd',
     name: 'Lyft',
     imageUrl: '/static/images/products/product_4.png',
-    updatedAt: 'alsdkfasdfasdf'
+    updatedAt: 'alsdkfasdfasdf',
   },
   {
     id: 'askdfjd',
     name: 'GitHub',
     imageUrl: '/static/images/products/product_5.png',
-    updatedAt: 'alsdfjadsafsdf'
-  }
+    updatedAt: 'alsdfjadsafsdf',
+  },
 ];
 
 const useStyles = makeStyles(({
   root: {
-    height: '100%'
+    height: '100%',
   },
   image: {
     height: 48,
-    width: 48
-  }
+    width: 48,
+  },
 }));
 
 const LatestProducts = ({ className, ...rest }) => {

@@ -1,6 +1,6 @@
-import React from "react";
-import clsx from "clsx";
-import PropTypes from "prop-types";
+import React from 'react';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
@@ -11,12 +11,12 @@ import {
   Typography,
   makeStyles,
   colors,
-} from "@material-ui/core";
-import InsertChartIcon from "@material-ui/icons/InsertChartOutlined";
+} from '@material-ui/core';
+import InsertChartIcon from '@material-ui/icons/InsertChartOutlined';
 
 const useStyles = makeStyles(() => ({
   root: {
-    height: "100%",
+    height: '100%',
   },
   avatar: {
     backgroundColor: colors.orange[600],

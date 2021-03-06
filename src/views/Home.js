@@ -1,26 +1,28 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import { Grid, CssBaseline } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
+import { Grid, CssBaseline } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
-import NavBar from "../components/dashboard/Header";
-import Features from "../components/dashboard/body/features/Features";
-import Introduction from "../components/dashboard/body/introduction/Introduction";
-import Description from "../components/dashboard/body/description/Description";
-import Footer from "../components/dashboard/Footer";
-import Subscription from "../components/dashboard/body/subscriptions/Subscription";
+import NavBar from '../components/dashboard/Header';
+import Features from '../components/dashboard/body/features/Features';
+import Introduction from '../components/dashboard/body/introduction/Introduction';
+import Description from '../components/dashboard/body/description/Description';
+import Footer from '../components/dashboard/Footer';
+import Subscription from '../components/dashboard/body/subscriptions/Subscription';
 // Important github
 // https://github.com/marmelab/react-admin/blob/master/examples/demo/src/dashboard/Welcome.tsx
 // for cerosal
 // https://github.com/merikbest/ecommerce-spring-reactjs
 class Home extends Component {
   render() {
-    console.log('/*******/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/')
+    console.log('/*******/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/');
     console.log(`${process.env.REACT_APP_BAR}`);
-    const { featuredPosts, post, footers, navlinkList } = this.props;
+    const {
+      featuredPosts, post, footers, navlinkList,
+    } = this.props;
     return (
-      <React.Fragment>
+      <>
         <CssBaseline />
         <NavBar navlinkList={navlinkList} />
         <Introduction post={post} />
@@ -28,7 +30,7 @@ class Home extends Component {
           Our Regular Blogs
         </Typography>
         <Grid container spacing={4}>
-          {featuredPosts.map((post) => (
+          {featuredPosts.map(() => (
             <Description key={post.title} post={post} />
           ))}
         </Grid>
@@ -49,18 +51,16 @@ class Home extends Component {
         <Features />
         <Subscription />
         <Footer footers={footers} />
-      </React.Fragment>
+      </>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    featuredPosts: state.rootReducer.featuredPosts,
-    post: state.rootReducer.post,
-    footers: state.rootReducer.footers,
-    navlinkList: state.rootReducer.navlinkList,
-  };
-};
+const mapStateToProps = (state) => ({
+  featuredPosts: state.rootReducer.featuredPosts,
+  post: state.rootReducer.post,
+  footers: state.rootReducer.footers,
+  navlinkList: state.rootReducer.navlinkList,
+});
 
 export default connect(mapStateToProps)(Home);

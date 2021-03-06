@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   Typography,
@@ -6,14 +6,14 @@ import {
   Toolbar,
   Button,
   AppBar,
-  Box
-} from "@material-ui/core";
+  Box,
+} from '@material-ui/core';
 
-import Menu from "./Menu";
-import useStyles from "./styles";
-import TopBar from "../TopBar/index";
-import Tags from "../Tags/Tags";
-import logo from "../../../../images/logo.jpeg"
+import Menu from './Menu';
+import useStyles from './styles';
+import TopBar from '../TopBar/index';
+import Tags from '../Tags/Tags';
+import logo from '../../../../images/logo.jpeg';
 
 export default function NavBar(props) {
   const classes = useStyles();
@@ -38,7 +38,7 @@ export default function NavBar(props) {
             <a
               href="/"
             >
-            <img src={logo} height={60} width={120} alt="Logo"  />
+              <img src={logo} height={60} width={120} alt="Logo" />
             </a>
           </Typography>
           {navlinkList.map((item, index) => (

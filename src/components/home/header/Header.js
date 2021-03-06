@@ -1,17 +1,17 @@
-import React from "react";
-import clsx from "clsx";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import MenuIcon from "@material-ui/icons/Menu";
-import IconButton from "@material-ui/core/IconButton";
-import Person from "@material-ui/icons/Person";
-import Drawer from "@material-ui/core/Drawer";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import List from "@material-ui/core/List";
-import Divider from "@material-ui/core/Divider";
-import useStyles from "./styles";
-import { mainListItems } from "./../ListItems";
+import React from 'react';
+import clsx from 'clsx';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import Person from '@material-ui/icons/Person';
+import Drawer from '@material-ui/core/Drawer';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import useStyles from './styles';
+import { mainListItems } from '../ListItems';
 
 export default function Header() {
   const classes = useStyles();
@@ -23,7 +23,7 @@ export default function Header() {
     setOpen(false);
   };
   return (
-    <React.Fragment>
+    <>
       <AppBar
         position="absolute"
         className={clsx(classes.appBar, open && classes.appBarShift)}
@@ -36,7 +36,7 @@ export default function Header() {
             onClick={handleDrawerOpen}
             className={clsx(
               classes.menuButton,
-              open && classes.menuButtonHidden
+              open && classes.menuButtonHidden,
             )}
           >
             <MenuIcon />
@@ -76,6 +76,6 @@ export default function Header() {
         <Divider />
         {/* <List>{secondaryListItems}</List> */}
       </Drawer>
-    </React.Fragment>
+    </>
   );
 }

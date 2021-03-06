@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { teacherSignUpURL } from './../../utils/constants';
+import { teacherSignUpURL } from '../../utils/constants';
 
 const teacherRegistration = (teacherData) => {
   // const sessionFields = JSON.parse(JSON.stringify(session));
@@ -50,4 +50,4 @@ const teacherLogin = (teacherData) => {
 export {
   teacherRegistration,
   teacherLogin,
-}
+};

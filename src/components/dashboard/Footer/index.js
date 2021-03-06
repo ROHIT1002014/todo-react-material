@@ -1,14 +1,13 @@
-import React from "react";
+import React from 'react';
 // import { withStyles } from "@material-ui/core";
 // import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-import useStyles from "./styles";
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import useStyles from './styles';
 import Copyright from '../../Copyright';
-
 
 export default function Footer(props) {
   const { footers } = props;
