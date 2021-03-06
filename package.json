@@ -15,6 +15,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
+    "react-helmet": "^6.1.0",
     "react-material-ui-carousel": "^2.2.1",
     "react-perfect-scrollbar": "^1.5.8",
     "react-redux": "^7.2.2",
@@ -33,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +58,9 @@
   "devDependencies": {
     "env-cmd": "^10.1.0",
     "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1",
     "eslint-config-airbnb": "^18.2.1"
   }
 }

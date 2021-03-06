@@ -17,8 +17,8 @@ import {
   Typography,
   makeStyles
 } from '@material-ui/core';
-import getInitials from '/Users/apple/todo-react-material/src/utils/getInitials';
-import IOSSwitch from '/Users/apple/todo-react-material/src/components/dashboard/body/togglebutton/ToggleButton';
+import getInitials from '../../../utils/getInitials';
+import IOSSwitch from '../../../components/dashboard/body/togglebutton/ToggleButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {},

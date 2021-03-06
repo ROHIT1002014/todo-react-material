@@ -4,12 +4,12 @@ import {
   Container,
   makeStyles
 } from '@material-ui/core';
-import Page from '/Users/apple/todo-react-material/src/components/Page';
+import Page from '../../../components/Page';
 import Results from './Results';
 import Toolbar from './Toolbar';
 import data from './data';
-import NavBar from '/Users/apple/todo-react-material/src/layouts/DashboardLayout/NavBar';
-import TopBar from '/Users/apple/todo-react-material/src/layouts/DashboardLayout/TopBar';
+import NavBar from '../../../layouts/DashboardLayout/NavBar';
+import TopBar from '../../../layouts/DashboardLayout/TopBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
