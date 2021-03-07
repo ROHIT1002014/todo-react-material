@@ -23,7 +23,7 @@ export default function Footer(props) {
             <ul>
               {footer.description.map((item) => (
                 <li key={item}>
-                  <Link href="#" variant="subtitle1" color="textSecondary">
+                  <Link href="/footer" variant="subtitle1" color="textSecondary">
                     {item}
                   </Link>
                 </li>

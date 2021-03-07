@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
@@ -36,7 +37,7 @@ export default function MainFeaturedPost(props) {
             <Typography variant="h6" color="inherit" paragraph>
               {post.description}
             </Typography>
-            <Link variant="subtitle1" href="#">
+            <Link variant="subtitle1" href="/intro">
               {post.linkText}
             </Link>
             <Button variant="contained">Learn More</Button>
@@ -48,5 +49,6 @@ export default function MainFeaturedPost(props) {
 }
 
 MainFeaturedPost.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   post: PropTypes.object,
 };

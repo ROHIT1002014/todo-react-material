@@ -76,6 +76,7 @@ const Results = ({ className, customers, ...rest }) => {
   return (
     <Card
       className={clsx(classes.root, className)}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <PerfectScrollbar>
@@ -177,7 +178,7 @@ const Results = ({ className, customers, ...rest }) => {
 
 Results.propTypes = {
   // className: PropTypes.string,
-  customers: PropTypes.array.isRequired,
+  customers: PropTypes.bool.isRequired,
 };
 
 export default Results;

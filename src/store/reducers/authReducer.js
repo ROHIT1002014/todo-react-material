@@ -1,3 +1,4 @@
+import log from 'loglevel';
 import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from './utility';
 
@@ -13,7 +14,7 @@ const authStart = (state) => updateObject(state, {
 });
 
 const authSuccess = (state, action) => {
-  console.log('reducer called .............', action);
+  log.debug(`reducer called ............. : ${action}`);
   return updateObject(state, {
     token: action.token,
     error: null,

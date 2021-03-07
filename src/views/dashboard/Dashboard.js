@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
+import log from 'loglevel';
 
 import {
   makeStyles,
@@ -52,17 +53,18 @@ const useStyles = makeStyles((theme) => ({
 
 class Dashboard extends Component {
   componentDidMount() {
-    console.log('--------------------', this.props);
-    whoAmI(this.props.token).then((res) => {
-      console.log('who am i response', res);
+    const { token } = this.props;
+    log.debug(this.props);
+    whoAmI(token).then((res) => {
+      log.debug(`who am i response: ${res}`);
     });
   }
 
   render() {
     const { classes } = this.props;
-    console.log(classes);
+    log.debug(classes);
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-    console.log('///////////////////////////////////////////////', this.props);
+    log.debug(this.props);
     return (
       <div className={classes.root}>
         <CssBaseline />

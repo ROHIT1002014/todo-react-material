@@ -1,4 +1,5 @@
 import React, { Component, StrictMode } from 'react';
+import log from 'loglevel';
 
 import Container from '@material-ui/core/Container';
 
@@ -12,7 +13,7 @@ const initUser = {
 
 class DemoVideoView extends Component {
   handleSubmit = (user) => {
-    console.log('Video form submit.', user);
+    log.debug(`Video form submit. ${user}`);
   };
 
   render() {

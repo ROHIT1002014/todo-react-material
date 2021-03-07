@@ -24,6 +24,7 @@ const StyledMenu = withStyles({
       vertical: 'top',
       horizontal: 'center',
     }}
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
   />
 ));
@@ -72,8 +73,8 @@ export default function CustomizedMenus(props) {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {dropdownList.map((text, index) => (
-          <StyledMenuItem key={index}>
+        {dropdownList.map((text) => (
+          <StyledMenuItem key={text}>
             <ListItemText primary={text} />
             {/* <ListItemIcon>
             </ListItemIcon> */}

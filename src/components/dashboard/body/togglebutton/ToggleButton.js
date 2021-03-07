@@ -49,6 +49,7 @@ const IOSSwitch = withStyles((theme) => ({
       track: classes.track,
       checked: classes.checked,
     }}
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
   />
 ));

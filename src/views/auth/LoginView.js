@@ -1,4 +1,5 @@
 import React, { Component, StrictMode } from 'react';
+import log from 'loglevel';
 
 import Container from '@material-ui/core/Container';
 import { connect } from 'react-redux';
@@ -14,11 +15,11 @@ const initUser = {
 
 class LoginView extends Component {
   handleSubmit = (user) => {
-    console.log('Login form submit.', user);
+    const { setAuthSuccess, history } = this.props;
+    log.debug(`Login form submit. ${user}`);
     loginAuth(user).then((res) => {
-      console.log('alsdfjalksd', res);
-      this.props.authSuccess(res.data.auth_token);
-      this.props.history.push('/home');
+      setAuthSuccess(res.data.auth_token);
+      history.push('/home');
     });
   };
 
@@ -35,7 +36,7 @@ class LoginView extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  authSuccess: (token) => dispatch(authSuccess(token)),
+  setAuthSuccess: (token) => dispatch(authSuccess(token)),
 });
 
 const mapStateToProps = (state) => ({

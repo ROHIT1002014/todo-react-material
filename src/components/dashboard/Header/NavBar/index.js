@@ -41,8 +41,8 @@ export default function NavBar(props) {
               <img src={logo} height={60} width={120} alt="Logo" />
             </a>
           </Typography>
-          {navlinkList.map((item, index) => (
-            <Box mx={1} key={index}>
+          {navlinkList.map((item) => (
+            <Box mx={1} key={item}>
               <Menu
                 title={item.name}
                 dropdownList={item.dropdownList}

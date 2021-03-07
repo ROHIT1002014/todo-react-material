@@ -53,6 +53,7 @@ const NavItem = ({
     <ListItem
       className={clsx(classes.item, className)}
       disableGutters
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <Button
@@ -76,9 +77,13 @@ const NavItem = ({
 };
 
 NavItem.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   className: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
   href: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
   icon: PropTypes.elementType,
+  // eslint-disable-next-line react/require-default-props
   title: PropTypes.string,
 };
 

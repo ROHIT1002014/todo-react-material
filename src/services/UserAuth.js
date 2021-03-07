@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import log from 'loglevel';
 import { userLoginURL, userProfileURL } from '../utils/constants';
 
 const cookies = new Cookies();
@@ -16,15 +17,15 @@ const loginAuth = (loginData) => {
       credentials: 'same-origin',
       data,
     };
-    console.log(config);
-    console.log(loginData);
+    log.debug(config);
+    log.debug(loginData);
     axios(config)
       .then((response) => {
-        console.log('data after successful call is ', response);
+        log.debug(`data after successful call is : ${response}`);
         resolve(response);
       })
       .catch((error) => {
-        console.log(error.response);
+        log.debug(error.response);
         reject(error);
       });
   });
@@ -39,13 +40,13 @@ const whoAmI = (token) => {
         headers: { Authorization: `token ${token}` },
       })
       .then((res) => {
-        console.log('data after successful call is ', res);
+        log.debug(`data after successful call is : ${res}`);
         localStorage.setItem('isAuth', true);
         localStorage.setItem('token', token);
         resolve(res);
       })
       .catch((error) => {
-        console.log(error);
+        log.debug(error);
         reject(error);
       });
   });

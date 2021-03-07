@@ -1,4 +1,5 @@
 import axios from 'axios';
+import log from 'loglevel';
 import { teacherSignUpURL } from '../../utils/constants';
 
 const teacherRegistration = (teacherData) => {
@@ -13,11 +14,11 @@ const teacherRegistration = (teacherData) => {
         teacherData, { headers },
       )
       .then((response) => {
-        console.log('data after successful call is ', response);
+        log.debug(`data after successful call is : ${response}`);
         resolve(response);
       })
       .catch((error) => {
-        console.log(error.response);
+        log.debug(error.response);
         reject(error);
       });
   });
@@ -36,11 +37,11 @@ const teacherLogin = (teacherData) => {
         teacherData, { headers },
       )
       .then((response) => {
-        console.log('data after successful call is ', response);
+        log.debug(`data after successful call is : ${response}`);
         resolve(response);
       })
       .catch((error) => {
-        console.log(error.response);
+        log.debug(error.response);
         reject(error);
       });
   });

@@ -3,9 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import log from 'loglevel';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './store/index';
+
+log.enableAll();
 
 const store = createStore(rootReducer);
 

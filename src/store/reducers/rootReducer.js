@@ -70,6 +70,6 @@ const initState = {
   ],
 };
 
-const rootReducer = (state = initState, action) => state;
+const rootReducer = (state = initState) => state;
 
 export default rootReducer;

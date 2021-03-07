@@ -94,6 +94,7 @@ const LatestOrders = ({ className, ...rest }) => {
   const [orders] = useState(data);
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardHeader title="Latest Orders" />
       <Divider />

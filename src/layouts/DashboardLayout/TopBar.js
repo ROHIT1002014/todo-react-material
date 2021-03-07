@@ -24,11 +24,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const TopBar = ({
-  className,
-  onMobileNavOpen,
-  ...rest
-}) => {
+const TopBar = ({ className, onMobileNavOpen, ...rest }) => {
   const classes = useStyles();
   const [notifications] = useState([]);
 
@@ -36,6 +32,7 @@ const TopBar = ({
     <AppBar
       className={clsx(classes.root, className)}
       elevation={0}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <Toolbar>
@@ -71,7 +68,9 @@ const TopBar = ({
 };
 
 TopBar.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   className: PropTypes.string,
+  // eslint-disable-next-line react/require-default-props
   onMobileNavOpen: PropTypes.func,
 };
 

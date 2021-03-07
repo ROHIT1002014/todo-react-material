@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import log from 'loglevel';
 
 import Container from '@material-ui/core/Container';
 
@@ -22,7 +23,7 @@ const initUser = {
 
 class SignupView extends Component {
   handleSubmit = (user) => {
-    console.log('Sign up form submit.', user);
+    log.debug(`Sign up form submit : ${user}`);
     teacherRegistration(user);
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
@@ -47,5 +48,6 @@ export default function Description(props) {
 }
 
 Description.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   post: PropTypes.object,
 };

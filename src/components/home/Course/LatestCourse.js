@@ -66,6 +66,7 @@ const LatestProducts = ({ className, ...rest }) => {
   return (
     <Card
       className={clsx(classes.root, className)}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <CardHeader

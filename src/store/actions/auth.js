@@ -1,4 +1,5 @@
 import axios from 'axios';
+import log from 'loglevel';
 import * as actionTypes from './actionTypes';
 
 // actions
@@ -55,7 +56,7 @@ export const authSignup = (username, email, password1, password2) => (dispatch) 
     password1,
     password2,
   }).then((res) => {
-    console.log(res.data.key);
+    log.debug(res.data.key);
     const token = res.data.key;
     const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
     localStorage.setItem('token', token);

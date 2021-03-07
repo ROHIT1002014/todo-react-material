@@ -27,6 +27,7 @@ const TotalProfit = ({ className, ...rest }) => {
   const classes = useStyles();
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardContent>
         <Grid container justify="space-between" spacing={3}>
@@ -50,6 +51,7 @@ const TotalProfit = ({ className, ...rest }) => {
 };
 
 TotalProfit.propTypes = {
+  // eslint-disable-next-line react/require-default-props
   className: PropTypes.string,
 };
 

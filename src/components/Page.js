@@ -9,6 +9,7 @@ const Page = forwardRef(({
 }, ref) => (
   <div
     ref={ref}
+    // eslint-disable-next-line react/jsx-props-no-spreading
     {...rest}
   >
     <Helmet>
@@ -20,6 +21,7 @@ const Page = forwardRef(({
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,
+  // eslint-disable-next-line react/require-default-props
   title: PropTypes.string,
 };
 

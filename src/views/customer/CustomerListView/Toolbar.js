@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {
   Box,
@@ -29,6 +28,7 @@ const Toolbar = ({ className, ...rest }) => {
   return (
     <div
       className={clsx(classes.root, className)}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <Box
