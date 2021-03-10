@@ -7,10 +7,14 @@ import log from 'loglevel';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import rootReducer from './store/index';
+import NetworkService from './services/network-service';
 
 log.enableAll();
 
 const store = createStore(rootReducer);
+
+// Here is the guy where I set up the interceptors!
+NetworkService.setupInterceptors(store);
 
 ReactDOM.render(
   <React.StrictMode>

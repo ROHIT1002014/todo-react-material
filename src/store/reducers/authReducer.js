@@ -33,6 +33,12 @@ const logout = (state) => ({
   token: null,
 });
 
+const toggleSnackbar = (state, action) => ({
+  ...state,
+  showSnackbar: action.toggleValue,
+  snackbarText: action.snackbarText,
+});
+
 const authReducer = (state = initialstate, action) => {
   switch (action.type) {
     case actionTypes.AUTH_START:
@@ -46,6 +52,8 @@ const authReducer = (state = initialstate, action) => {
 
     case actionTypes.AUTH_LOGOUT:
       return logout(state, action);
+    case actionTypes.TOGGLE_SNACKBAR:
+      return toggleSnackbar(state, action);
 
     default:
       return state;

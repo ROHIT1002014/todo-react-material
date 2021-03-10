@@ -24,6 +24,12 @@ export const logout = () => {
   };
 };
 
+export const toggleSnackbar = (toggleValue, snackbarText) => ({
+  type: actionTypes.TOGGLE_SNACKBAR,
+  toggleValue,
+  snackbarText,
+});
+
 // action creators
 export const checkAuthTimeout = (expirationTime) => (dispatch) => {
   setTimeout(() => {
