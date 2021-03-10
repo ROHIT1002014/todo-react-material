@@ -5,7 +5,6 @@ import log from 'loglevel';
 import Home from '../views/Home';
 import LoginView from '../views/auth/LoginView';
 import DemoVideoView from '../views/auth/DemoVideoView';
-import RegistrationView from '../views/auth/RegistrationView';
 import SignupView from '../views/auth/SignupVIew';
 import Dashboard from '../views/dashboard/Dashboard';
 import StudentRegistrationView from '../views/auth/StudentRegistrationView';
@@ -38,7 +37,6 @@ const Index = () => (
       <GuardedRoute path="/login" exact component={LoginView} />
 
       <GuardedRoute exact path="/signup" component={SignupView} />
-      <GuardedRoute exact path="/registration" component={RegistrationView} />
       <GuardedRoute
         exact
         path="/home"
