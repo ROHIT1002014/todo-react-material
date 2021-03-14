@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-
-import { Container, makeStyles } from '@material-ui/core';
-
-import Page from '../../../components/Page';
-import NavBar from '../../../layouts/DashboardLayout/NavBar/teacher/index';
-import TopBar from '../../../layouts/DashboardLayout/TopBar';
-
-import TeacherRoutes from './teacher-routes';
+import { makeStyles } from '@material-ui/core';
+import Page from '../../components/Page';
+import NavBar from '../../layouts/DashboardLayout/NavBar/teacher/index';
+import TopBar from '../../layouts/DashboardLayout/TopBar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,8 +38,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CustomerListView = (props) => {
-  const { teacherNavItems, match } = props;
+  const { teacherNavItems } = props;
   const classes = useStyles();
+  // const [customers] = useState(studnetData);
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
@@ -58,20 +55,13 @@ const CustomerListView = (props) => {
         className={classes.root}
         title="Customers"
       >
-        <div className={classes.wrapper}>
-          <div className={classes.contentContainer}>
-            <div className={classes.content}>
-              <Container maxWidth>
-                <TeacherRoutes url={match.url} />
-              </Container>
-            </div>
-          </div>
-        </div>
+        <h1>laksdflkajsdflkjadsf</h1>
       </Page>
     </div>
   );
 };
 const mapStateToProps = (state) => ({
+  studnetData: state.rootReducer.studnetData,
   teacherNavItems: state.rootReducer.teacherNavItems,
 });
 

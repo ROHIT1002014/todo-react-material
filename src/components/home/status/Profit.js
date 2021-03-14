@@ -18,8 +18,8 @@ const useStyles = makeStyles(() => ({
   },
   avatar: {
     backgroundColor: colors.indigo[600],
-    height: 56,
-    width: 56,
+    height: 46,
+    width: 46,
   },
 }));
 
@@ -30,12 +30,12 @@ const TotalProfit = ({ className, ...rest }) => {
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardContent>
-        <Grid container justify="space-between" spacing={3}>
+        <Grid container justify="space-between">
           <Grid item>
-            <Typography color="textSecondary" gutterBottom variant="h6">
+            <Typography color="textSecondary" gutterBottom>
               TOTAL PROFIT
             </Typography>
-            <Typography color="textPrimary" variant="h3">
+            <Typography color="textPrimary" variant="h4">
               $23,200
             </Typography>
           </Grid>

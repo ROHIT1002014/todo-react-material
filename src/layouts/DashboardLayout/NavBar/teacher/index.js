@@ -24,34 +24,34 @@ import {
 import NavItem from '../NavItem';
 
 const user = {
-  avatar: '/Users/apple/todo-react-material/src/images/logo.png',
+  avatar: './images/logo.png',
   jobTitle: 'Admin',
   name: 'Gyan Acharya',
 };
 
 const items = [
   {
-    href: '/app/dashboard',
+    href: '/teacher/dashboard',
     icon: BarChartIcon,
     title: 'Dashboard',
   },
   {
-    href: '/app/customers',
+    href: '/teacher/enrolled-students',
     icon: UsersIcon,
-    title: 'Subscribers',
+    title: 'Enrolled Students',
   },
   {
-    href: '/app/products',
+    href: '/teacher/courses',
     icon: ShoppingBagIcon,
-    title: 'Products',
+    title: 'Courses',
   },
   {
-    href: '/app/account',
+    href: '/teacher/account',
     icon: UserIcon,
     title: 'Account',
   },
   {
-    href: '/app/settings',
+    href: '/teacher/settings',
     icon: SettingsIcon,
     title: 'Settings',
   },
@@ -114,7 +114,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
           className={classes.avatar}
           component={RouterLink}
           src={user.avatar}
-          to="/app/account"
+          to="/teacher/dashboard"
         />
         <Typography
           className={classes.name}

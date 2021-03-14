@@ -6,10 +6,9 @@ import Home from '../views/Home';
 import LoginView from '../views/auth/LoginView';
 import DemoVideoView from '../views/auth/DemoVideoView';
 import SignupView from '../views/auth/SignupVIew';
-import Dashboard from '../views/dashboard/Dashboard';
 import StudentRegistrationView from '../views/auth/StudentRegistrationView';
 import NotFoundView from '../views/errors/NotFoundView';
-import CustomerListView from '../views/customer/CustomerListView';
+import CustomerListView from '../views/dashboard/teacher/index';
 
 const requireLogin = (to, from, next) => {
   if (to.meta.auth) {
@@ -37,15 +36,26 @@ const Index = () => (
       <GuardedRoute path="/login" exact component={LoginView} />
 
       <GuardedRoute exact path="/signup" component={SignupView} />
+      {/* student routes */}
       <GuardedRoute
         exact
-        path="/home"
-        component={Dashboard}
-        meta={{ auth: true }}
+        path="/student/registration"
+        name="student-registration"
+        component={StudentRegistrationView}
       />
-      <GuardedRoute exact path="/stureg" component={StudentRegistrationView} />
-      <GuardedRoute exact path="/demo" component={DemoVideoView} />
-      <GuardedRoute exact path="/customers" component={CustomerListView} />
+
+      {/* teacher routes */}
+      <GuardedRoute
+        exact
+        path="/upload-video"
+        name="upload-video"
+        component={DemoVideoView}
+      />
+      <GuardedRoute
+        name="teacher"
+        path="/teacher"
+        component={CustomerListView}
+      />
       <GuardedRoute path="*" component={NotFoundView} />
       {/* <Route exact path="/registrations/:id" component={EditProjectInfo} /> */}
     </Switch>

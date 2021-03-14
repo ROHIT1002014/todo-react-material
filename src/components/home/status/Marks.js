@@ -20,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     backgroundColor: colors.red[600],
-    height: 56,
-    width: 56,
+    height: 46,
+    width: 46,
   },
   differenceIcon: {
     color: colors.red[900],
@@ -39,12 +39,12 @@ const Budget = ({ className, ...rest }) => {
     // eslint-disable-next-line react/jsx-props-no-spreading
     <Card className={clsx(classes.root, className)} {...rest}>
       <CardContent>
-        <Grid container justify="space-between" spacing={3}>
+        <Grid container justify="space-between">
           <Grid item>
-            <Typography color="textSecondary" gutterBottom variant="h6">
+            <Typography color="textSecondary" gutterBottom>
               BUDGET
             </Typography>
-            <Typography color="textPrimary" variant="h3">
+            <Typography color="textPrimary" variant="h4">
               $24,000
             </Typography>
           </Grid>

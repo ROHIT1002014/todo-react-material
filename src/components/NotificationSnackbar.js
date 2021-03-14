@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { toggleSnackbar } from '../store/actions/auth';
 
 const NotificationSnackbar = (props) => {
-  console.log('**************>', props);
   const { showSnackbar } = props;
   const open = showSnackbar;
   const { snackbarText } = props;
