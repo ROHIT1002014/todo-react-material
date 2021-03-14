@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import {
   Box,
   Container,
@@ -7,8 +8,7 @@ import {
 import Page from '../../../components/Page';
 import Results from './Results';
 import Toolbar from './Toolbar';
-import data from './data';
-import NavBar from '../../../layouts/DashboardLayout/NavBar';
+import NavBar from '../../../layouts/DashboardLayout/NavBar/teacher/index';
 import TopBar from '../../../layouts/DashboardLayout/TopBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,9 +43,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CustomerListView = () => {
+const CustomerListView = (props) => {
+  const { studnetData, teacherNavItems } = props;
   const classes = useStyles();
-  const [customers] = useState(data);
+  // const [customers] = useState(studnetData);
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   return (
@@ -54,6 +55,7 @@ const CustomerListView = () => {
       <NavBar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}
+        teacherNavItems={teacherNavItems}
       />
       <Page
         className={classes.root}
@@ -65,7 +67,7 @@ const CustomerListView = () => {
               <Container maxWidth={false}>
                 <Toolbar />
                 <Box mt={3}>
-                  <Results customers={customers} />
+                  <Results customers={studnetData} />
                 </Box>
               </Container>
             </div>
@@ -75,5 +77,9 @@ const CustomerListView = () => {
     </div>
   );
 };
+const mapStateToProps = (state) => ({
+  studnetData: state.rootReducer.studnetData,
+  teacherNavItems: state.rootReducer.teacherNavItems,
+});
 
-export default CustomerListView;
+export default connect(mapStateToProps)(CustomerListView);

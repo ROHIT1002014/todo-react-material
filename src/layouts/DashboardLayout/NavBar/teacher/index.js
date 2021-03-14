@@ -21,7 +21,7 @@ import {
   UserPlus as UserPlusIcon,
   Users as UsersIcon,
 } from 'react-feather';
-import NavItem from './NavItem';
+import NavItem from '../NavItem';
 
 const user = {
   avatar: '/Users/apple/todo-react-material/src/images/logo.png',
